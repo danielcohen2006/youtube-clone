@@ -41,6 +41,7 @@
     "vitest": "~0.34.6"
   },
   "dependencies": {
+    "@clerk/clerk-react": "^4.30.3",
     "@swc/helpers": "~0.5.2",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.3",

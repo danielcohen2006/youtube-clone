@@ -5,20 +5,23 @@ import { RiUpload2Fill } from 'react-icons/ri';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { FaHome } from 'react-icons/fa';
 import { BiSolidHelpCircle } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
 
   const menuItems = [
-    { icon: <FaHome size={25} className="mr-4" />, text: 'Home' },
-    { icon: <MdSubscriptions size={25} className="mr-4" />, text: 'Subs' },
-    { icon: <RiUpload2Fill size={25} className="mr-4" />, text: 'Post' },
-    { icon: <BiSolidHelpCircle size={25} className="mr-4" />, text: 'Help' },
+    { icon: <FaHome size={25} className="mr-4" />, text: 'Home', links: 'home' },
+    { icon: <MdSubscriptions size={25} className="mr-4" />, text: 'Subs', links: 'subs' },
+    { icon: <RiUpload2Fill size={25} className="mr-4" />, text: 'Post', links: 'post' },
+    { icon: <BiSolidHelpCircle size={25} className="mr-4" />, text: 'Help', links:'help' },
   ];
+
+  
 
   return (
     <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 shadow-sm">
-      {/* Left side */}
+      {/* Left side  text*/}
       <div className="flex items-center">
         <div onClick={() => setNav(!nav)} className="cursor-pointer">
           <AiOutlineMenu size={30} />
@@ -37,7 +40,7 @@ const Navbar = () => {
           placeholder="Search"
         />
       </div>
-      {/* Cart button */}
+      {/* Sign in button */}
       <button className="bg-black text-white hidden md:flex items-center py-2 rounded-full border border-black px-5 ">
         <FaRegUserCircle size={20} className="mr-2" /> Sign in
       </button>
@@ -66,13 +69,13 @@ const Navbar = () => {
 
         <nav>
           <div className="pt-14">
-            <ul className="flex flex-col p-4 text-gray-800">
-              {menuItems.map(({ icon, text }, index) => {
+            <ul className="flex flex-col p-2 text-gray-800">
+              {menuItems.map(({ icon, text, links}, index) => {
                 return (
-                  <div key={index} className=" py-4">
-                    <li className="text-xl flex cursor-pointer  w-[50%] rounded-full mx-auto p-2 hover:text-white hover:bg-black">
+                  <div key={index} className=" py-4"><Link className="w-1/2 items-center justify-evenly" to={links}>
+                    <li className="text-xl flex cursor-pointer  w-[50%] rounded-full mx-auto p-3 hover:text-white hover:bg-black">
                       {icon} {text}
-                    </li>
+                    </li></Link>
                   </div>
                 );
               })}
