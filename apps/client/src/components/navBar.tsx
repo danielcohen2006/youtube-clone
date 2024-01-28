@@ -6,6 +6,7 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import { FaHome } from 'react-icons/fa';
 import { BiSolidHelpCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import { SignIn } from '@clerk/clerk-js/dist/types/ui/components/SignIn';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -41,9 +42,11 @@ const Navbar = () => {
         />
       </div>
       {/* Sign in button */}
-      <button className="bg-black text-white hidden md:flex items-center py-2 rounded-full border border-black px-5 ">
-        <FaRegUserCircle size={20} className="mr-2" /> Sign in
-      </button>
+      <Link to={'sign'}>
+        <button className="bg-black text-white hidden md:flex items-center py-2 rounded-full border border-black px-5 ">
+          <FaRegUserCircle size={20} className="mr-2" /> Sign in
+        </button>
+      </Link>
 
       {/* Mobile Menu */}
       {/* Overlay */}
@@ -70,12 +73,17 @@ const Navbar = () => {
         <nav>
           <div className="pt-14">
             <ul className="flex flex-col p-2 text-gray-800">
-              {menuItems.map(({ icon, text, links}, index) => {
+              {menuItems.map(({ icon, text, links }, index) => {
                 return (
-                  <div key={index} className=" py-4"><Link className="w-1/2 items-center justify-evenly" to={links}>
-                    <li className="text-xl flex cursor-pointer  w-[50%] rounded-full mx-auto p-3 hover:text-white hover:bg-black">
-                      {icon} {text}
-                    </li></Link>
+                  <div key={index} className=" py-4">
+                    <Link
+                      className="w-1/2 items-center justify-evenly"
+                      to={links}
+                    >
+                      <li className="text-xl flex cursor-pointer  w-[50%] rounded-full mx-auto p-3 hover:text-white hover:bg-black">
+                        {icon} {text}
+                      </li>
+                    </Link>
                   </div>
                 );
               })}

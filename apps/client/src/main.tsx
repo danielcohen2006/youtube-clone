@@ -7,6 +7,10 @@ import { Post} from './routes/post';
 import { Home } from './routes/home';
 import { Help } from './routes/help';
 import { Subs } from './routes/subs';
+import {Sign} from './routes/sign'
+
+
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -28,6 +32,10 @@ const router = createBrowserRouter([
         path: '/help',
         element: <Help />,
       },
+      {
+        path: '/sign',
+        element: <Sign />,
+      }
     ],
   },
 ]);
@@ -40,3 +48,6 @@ root.render(
     <RouterProvider router={router} />
   </StrictMode>
 );
+
+
+
