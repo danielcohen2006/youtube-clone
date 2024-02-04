@@ -6,7 +6,8 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import { FaHome } from 'react-icons/fa';
 import { BiSolidHelpCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
-import { SignIn } from '@clerk/clerk-js/dist/types/ui/components/SignIn';
+
+
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -47,6 +48,9 @@ const Navbar = () => {
           <FaRegUserCircle size={20} className="mr-2" /> Sign in
         </button>
       </Link>
+
+    
+     
 
       {/* Mobile Menu */}
       {/* Overlay */}
