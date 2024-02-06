@@ -6,20 +6,33 @@ import { FaRegUserCircle } from 'react-icons/fa';
 import { FaHome } from 'react-icons/fa';
 import { BiSolidHelpCircle } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
-
-
+import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
 
   const menuItems = [
-    { icon: <FaHome size={25} className="mr-4" />, text: 'Home', links: 'home' },
-    { icon: <MdSubscriptions size={25} className="mr-4" />, text: 'Subs', links: 'subs' },
-    { icon: <RiUpload2Fill size={25} className="mr-4" />, text: 'Post', links: 'post' },
-    { icon: <BiSolidHelpCircle size={25} className="mr-4" />, text: 'Help', links:'help' },
+    {
+      icon: <FaHome size={25} className="mr-4" />,
+      text: 'Home',
+      links: 'home',
+    },
+    {
+      icon: <MdSubscriptions size={25} className="mr-4" />,
+      text: 'Subs',
+      links: 'subs',
+    },
+    {
+      icon: <RiUpload2Fill size={25} className="mr-4" />,
+      text: 'Post',
+      links: 'post',
+    },
+    {
+      icon: <BiSolidHelpCircle size={25} className="mr-4" />,
+      text: 'Help',
+      links: 'help',
+    },
   ];
-
-  
 
   return (
     <div className="max-w-[1640px] mx-auto flex justify-between items-center p-4 shadow-sm">
@@ -44,13 +57,13 @@ const Navbar = () => {
       </div>
       {/* Sign in button */}
       <Link to={'sign'}>
-        <button className="bg-black text-white hidden md:flex items-center py-2 rounded-full border border-black px-5 ">
-          <FaRegUserCircle size={20} className="mr-2" /> Sign in
-        </button>
+        <SignedIn>
+          <UserButton afterSignOutUrl="/sign-in" />
+        </SignedIn>
+        <SignedOut>
+          <Link to="/sign-in">Sign In</Link>
+        </SignedOut>
       </Link>
-
-    
-     
 
       {/* Mobile Menu */}
       {/* Overlay */}

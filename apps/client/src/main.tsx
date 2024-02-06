@@ -3,13 +3,14 @@ import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { App } from './app';
 import { Root } from './routes/root';
-import { Post} from './routes/post';
+import { Post } from './routes/post';
 import { Home } from './routes/home';
 import { Help } from './routes/help';
 import { Subs } from './routes/subs';
-import {Sign} from './routes/sign'
+import { Sign } from './routes/sign';
 import { ClerkProvider } from '@clerk/clerk-react';
-import Navbar from './components/navBar';
+import Navbar from './components/nav-bar.old';
+import { SignIn } from './routes/sign-in';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
       {
         path: '/sign',
         element: <Sign />,
-      }
+      },
+      {
+        path: '/sign-in',
+        element: <SignIn />,
+      },
     ],
   },
 ]);
@@ -51,12 +56,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-      <App />
-      
+      <RouterProvider router={router} />
     </ClerkProvider>
-    <RouterProvider router={router} />
   </StrictMode>
 );
-
-
-

@@ -6,7 +6,6 @@
   body,
   html,
   #root {
-    @apply h-screen;
-    @apply w-screen;
+    @apply h-full w-full;
   }
 }
