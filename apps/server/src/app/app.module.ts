@@ -7,5 +7,6 @@ import { AppService } from './app.service';
   imports: [],
   controllers: [AppController],
   providers: [AppService],
+  exports: [],
 })
 export class AppModule {}
