@@ -13,13 +13,18 @@ export const Navbar: React.FC = () => {
           You<span className="font-bold">tube</span>
         </Link>
       </div>
+      <div className="flex gap-4">
+        <Link to="/upload">Upload</Link>
+        <Link to="/videos">Videos</Link>
+      </div>
       <SignedIn>
         <UserButton afterSignOutUrl="/sign-in" />
       </SignedIn>
       <SignedOut>
         <Link
           to={'/sign-in'}
-          className=" flex items-center justify-between gap-2 rounded-lg px-4 py-2 hover:bg-gray-200 ">
+          className=" flex items-center justify-between gap-2 rounded-lg px-4 py-2 hover:bg-gray-200 "
+        >
           <FaUser />
           Sign In
         </Link>
