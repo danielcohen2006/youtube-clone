@@ -7,12 +7,10 @@ import {
   SignedOut,
 } from '@clerk/clerk-react';
 
-
-
 export const App: React.FC = () => {
   return (
     <div>
-        <SignedOut>
+      <SignedOut>
         <SignInButton />
         <p>This content is public. Only signed out users can see this.</p>
       </SignedOut>
@@ -23,5 +21,3 @@ export const App: React.FC = () => {
     </div>
   );
 };
-
-
