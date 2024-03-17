@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaYoutube } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa6';
+import { FiUpload } from 'react-icons/fi';
 
 export const Navbar: React.FC = () => {
   return (
@@ -14,7 +15,11 @@ export const Navbar: React.FC = () => {
         </Link>
       </div>
       <div className="flex gap-4">
-        <Link to="/upload">Upload</Link>
+        <Link to="/upload">
+          <div className=" flex items-center justify-between gap-1 text-2xl sm:text-3xl lg:text-4xl">
+            <FiUpload />
+          </div>
+        </Link>
         <Link to="/videos">Videos</Link>
       </div>
       <SignedIn>
