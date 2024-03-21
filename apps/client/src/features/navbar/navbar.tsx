@@ -14,13 +14,13 @@ export const Navbar: React.FC = () => {
           You<span className="font-bold">tube</span>
         </Link>
       </div>
-      <div className="flex gap-4">
+      <div className="ml-auto flex gap-4">
         <Link to="/upload">
-          <div className=" flex items-center justify-between gap-1 text-2xl sm:text-3xl lg:text-4xl">
+          <div className=" flex items-center justify-between gap-2  text-2xl sm:text-3xl lg:text-4xl">
             <FiUpload />
           </div>
         </Link>
-        <Link to="/videos">Videos</Link>
+        {/* <Link to="/videos">Videos</Link> */}
       </div>
       <SignedIn>
         <UserButton afterSignOutUrl="/sign-in" />
