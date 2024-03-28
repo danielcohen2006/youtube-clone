@@ -13,6 +13,7 @@ import { Videos } from './routes/videos';
 import { Upload } from './routes/upload';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import 'node_modules/video-react/dist/video-react.css';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
