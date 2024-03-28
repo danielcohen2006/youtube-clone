@@ -9,9 +9,11 @@ export const Navbar: React.FC = () => {
   return (
     <div className="flex h-fit w-full items-center justify-between gap-4 border-b border-gray-300 p-4">
       <div className=" flex items-center justify-between gap-1 text-2xl sm:text-3xl lg:text-4xl">
-        <FaYoutube />
-        <Link to={'/'}>
-          You<span className="font-bold">tube</span>
+        <Link to="/" className="flex items-center justify-center gap-2">
+          <FaYoutube />
+          <div>
+            You<span className="font-bold">tube</span>
+          </div>
         </Link>
       </div>
       <div className="ml-auto flex gap-4">

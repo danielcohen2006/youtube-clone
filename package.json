@@ -53,6 +53,9 @@
   "dependencies": {
     "@clerk/clerk-js": "^4.68.5",
     "@clerk/clerk-react": "^4.30.3",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.14",
     "@nestjs/common": "^10.0.2",
     "@nestjs/core": "^10.0.2",
     "@nestjs/platform-express": "^10.0.2",
